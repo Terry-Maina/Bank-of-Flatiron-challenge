@@ -15,3 +15,10 @@ function AccountContainer() {
             setCopy(data)
             setTransactions(data)});
         }, []);
+        console.log(transactions);
+
+        function addTransacfinfor(newTransaction) {
+            const update = [...transactions, newTransaction];
+            setTransactions(update);
+            }
+        //remove transaction
