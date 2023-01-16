@@ -15,3 +15,12 @@ function AddTransactionForm(anewTransaction) {
   const[category,setCategory] = useState("")
   const[amount,setAmount] = useState("")
   const[add, setAdd] = useState([])
+
+  function handleSubmit(event){
+    // event.preventDefault();
+    fetch(`http://localhost:3000/transactions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      
