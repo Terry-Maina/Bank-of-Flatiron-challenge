@@ -45,3 +45,5 @@ function AccountContainer() {
     </div>
     );
 }
+
+export default AccountContainer;
