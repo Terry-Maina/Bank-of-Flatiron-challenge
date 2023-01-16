@@ -23,4 +23,20 @@ function AddTransactionForm(anewTransaction) {
       headers: {
         "Content-Type": "application/json",
       },
-      
+      body: JSON.stringify({
+        // dataInfo
+        date:dataInfo.date,
+        description:dataInfo.description,
+        category:dataInfo.category,
+        amount:dataInfo.amount
+        // addFormFields(){
+        //   setDataInfo([...dataInfo, {
+        //     date:"",
+        //     description:"",
+        //     category:"",
+        //     amount:""
+        //   }])
+        //  }
+
+      })
+    })
