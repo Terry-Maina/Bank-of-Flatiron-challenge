@@ -5,17 +5,15 @@ import AddTransactionForm from "./AddTransactionForm";
 
 function AccountContainer() {
     const [transactions, setTransactions] = useState([]);
-    const [copy, setCopy] = React.useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/transactions")
+        fetch("http://localhost:3003/transactions")
         .then((response) => response.json())
         .then((data) => {
 
-            setCopy(data)
             setTransactions(data)});
         }, []);
-        console.log(transactions);
+        //console.log(transactions);
 
         function addTransacfinfor(newTransaction) {
             const update = [...transactions, newTransaction];
@@ -30,7 +28,7 @@ function AccountContainer() {
             let search = event.target.value.toLowerCase()
             //  const somevalue = undefined
             // const val = somevalue || ""
-            setTransactions(copy.filter(val=>val.description.toLowerCase().includes(search)))
+            setTransactions(transactions.filter(val=>val.description.toLowerCase().includes(search)))
             console.log(handleSearch)
         }
 

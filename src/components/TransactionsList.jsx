@@ -7,7 +7,7 @@ function TransactionsList({ transactions, handleDeleteTransaction, handleAddForm
 		console.log(transId);
 		try {
       // eslint-disable-next-line 
-			const res = await fetch("http://localhost:3000/transactions/" + transId, {
+			const res = await fetch("http://localhost:3003/transactions/" + transId, {
 				method: "DELETE",
 			});
 			handleDeleteTransaction(transId);
