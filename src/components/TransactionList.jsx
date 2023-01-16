@@ -22,3 +22,8 @@ function AccountContainer() {
             setTransactions(update);
             }
         //remove transaction
+        function deleteTransact(id) {
+            const update = transactions.filter((transaction) => transaction.id !== id);
+            setTransactions(update);
+        }
+        
