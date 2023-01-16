@@ -26,4 +26,22 @@ function AccountContainer() {
             const update = transactions.filter((transaction) => transaction.id !== id);
             setTransactions(update);
         }
-        
+        function handleSearch(event){
+            let search = event.target.value.toLowerCase()
+            //  const somevalue = undefined
+            // const val = somevalue || ""
+            setTransactions(copy.filter(val=>val.description.toLowerCase().includes(search)))
+            console.log(handleSearch)
+        }
+
+        return (
+            <div>
+      <Search handleSearch={handleSearch} />
+      <AddTransactionForm anewTransaction={addTransacfinfor} />
+      <TransactionsList
+        transactions={transactions}
+        deleteTransactions={deleteTransact}
+      />
+    </div>
+    );
+}
