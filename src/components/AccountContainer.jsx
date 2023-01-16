@@ -6,12 +6,23 @@ import AddTransactionForm from "./AddTransactionForm";
 function AccountContainer() {
     const [transactions, setTransactions] = useState([]);
 
+    // req.open("GET", "https://api.jsonbin.io/v3/b/63c5194a01a72b59f24c15f4/<BIN_VERSION | latest>", true);
+    // req.setRequestHeader("X-Master-Key", "<YOUR_API_KEY>");
+
     useEffect(() => {
-        fetch("http://localhost:3003/transactions")
+        fetch("https://api.jsonbin.io/v3/b/63c5194a01a72b59f24c15f4/latest", {
+            method:"GET",
+            headers:{
+                "Content-Type":"application/json",
+                "Accept":"application/json",
+                "X-Master-Key":"$2b$10$81GFpWlAFSY.L9UGrP7.heQMLIppxY1PH2w37N9fljccXwsBGZtlq"
+            }
+        })
         .then((response) => response.json())
         .then((data) => {
-
-            setTransactions(data)});
+            //console.log (data.record.transactions)
+            setTransactions(data.record.transactions)
+        })
         }, []);
         //console.log(transactions);
 

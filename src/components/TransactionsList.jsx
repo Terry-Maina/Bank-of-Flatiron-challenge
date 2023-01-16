@@ -7,9 +7,9 @@ function TransactionsList({ transactions, handleDeleteTransaction, handleAddForm
 		console.log(transId);
 		try {
       // eslint-disable-next-line 
-			const res = await fetch("http://localhost:3003/transactions/" + transId, {
+			/*const res = await fetch("http://localhost:3003/transactions/" + transId, {
 				method: "DELETE",
-			});
+			});*/
 			handleDeleteTransaction(transId);
 		} catch (error) {
 			console.log(error);
@@ -18,7 +18,7 @@ function TransactionsList({ transactions, handleDeleteTransaction, handleAddForm
 
 
     return (
-        <table onAddItem= {handleAddForm} className='ui celled striped padded table'>
+        <table className='ui celled striped padded table'>
           <tbody>
             <tr>
             {/* <th>
