@@ -10,7 +10,7 @@ function AccountContainer() {
     // req.setRequestHeader("X-Master-Key", "<YOUR_API_KEY>");
 
     useEffect(() => {
-        fetch("http://localhost:3003/transactions", {
+        fetch("http://localhost:3000/transactions", {
             method:"GET",
             headers:{
                 // "Content-Type":"application/json",
@@ -32,7 +32,7 @@ function AccountContainer() {
             }
         //remove transaction
         function deleteTransact(id) {
-        fetch(`http://localhost:3003/transactions/${id}`,{
+        fetch(`http://localhost:3000/transactions/${id}`,{
             method:"DELETE",
             headers:{
                 //"Content-Type":"application/json",
